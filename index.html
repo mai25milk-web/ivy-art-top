@@ -12,6 +12,12 @@
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+<script>
+// 同じタブで2回目以降は幕を省く。動きを減らす設定でも出さない
+(function(){var s=false;try{s=sessionStorage.getItem('ivy-splash')==='1'}catch(e){}
+if(!s&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('splash')})();
+</script>
+<div class="curtain" aria-hidden="true"><div class="curtain__logo"><svg><use href="#leaf"/></svg><p>Ivy</p><small>絵画・造形教室アイビー</small></div></div>
 <svg width="0" height="0" class="defs" aria-hidden="true">
   <symbol id="leaf" viewBox="-18 -16 36 34"><path fill="currentColor" d="M0-15C6-15 9-9 8-5 13-7 18-3 16 3 14 9 6 12 0 17-6 12-14 9-16 3-18-3-13-7-8-5-9-9-6-15 0-15Z"/><path d="M0 17V-6M0 4 9-1M0 4-9-1" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round"/></symbol>
   <symbol id="insta" viewBox="0 0 24 24"><rect x="1.5" y="1.5" width="21" height="21" rx="6" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="18" cy="6" r="1.5" fill="currentColor"/></symbol>
@@ -56,19 +62,23 @@
     </div>
   </div>
   <div class="hero__strip" aria-label="教室の写真">
-    <div class="hero__track">
-      <img src="assets/img/hero-paint.webp" alt="大きな紙に花の絵を描く子ども" width="320" height="680">
-      <img src="assets/img/kids.webp" alt="色を塗った木の立体をつくる子どもたち" width="320" height="680">
-      <img src="assets/img/mural.webp" alt="壁に蔦の絵を描く講師" width="320" height="680">
-      <img src="assets/img/adult.webp" alt="透明水彩で風景を描く大人" width="320" height="680">
-      <img src="assets/img/clay.webp" alt="色とりどりの粘土と木の素材" width="320" height="680">
-      <img src="assets/img/hero-paint.webp" alt="" aria-hidden="true" width="320" height="680">
-      <img src="assets/img/kids.webp" alt="" aria-hidden="true" width="320" height="680">
-      <img src="assets/img/mural.webp" alt="" aria-hidden="true" width="320" height="680">
-      <img src="assets/img/adult.webp" alt="" aria-hidden="true" width="320" height="680">
-      <img src="assets/img/clay.webp" alt="" aria-hidden="true" width="320" height="680">
+    <div class="frame">
+      <img class="is-on" src="assets/img/hero-paint.webp" alt="大きな紙に花の絵を描く子ども" width="320" height="680">
+      <img src="assets/img/adult.webp" alt="" width="320" height="680">
+      <img src="assets/img/clay.webp" alt="" width="320" height="680">
+    </div>
+    <div class="frame">
+      <img class="is-on" src="assets/img/kids.webp" alt="色を塗った木の立体をつくる子どもたち" width="320" height="680">
+      <img src="assets/img/wood.webp" alt="" width="320" height="680">
+      <img src="assets/img/hands.webp" alt="" width="320" height="680">
+    </div>
+    <div class="frame">
+      <img class="is-on" src="assets/img/mural.webp" alt="壁に蔦の絵を描く講師" width="320" height="680">
+      <img src="assets/img/adult2.webp" alt="" width="320" height="680">
+      <img src="assets/img/tools.webp" alt="" width="320" height="680">
     </div>
   </div>
+  <div class="hero__scroll" aria-hidden="true"><span>SCROLL</span></div>
   <svg class="hero__arc" viewBox="0 0 1440 280" preserveAspectRatio="none" aria-hidden="true"><path d="M0 280V160Q560 0 1440 100V280Z"/></svg>
 </section>
 
@@ -81,14 +91,14 @@
     </div>
     <div class="classes__list">
       <article class="class">
-        <img src="assets/img/kids.webp" alt="笑いながら立体をつくる子どもたち" width="430" height="280" loading="lazy">
+        <div class="pl"><img src="assets/img/kids.webp" alt="笑いながら立体をつくる子どもたち" width="430" height="280" loading="lazy"></div>
         <p class="tag tag--coral">小学生〜高校生</p>
         <h3>子どもクラス</h3>
         <p>家ではできない大きな絵や、木・ボード・粘土の立体にも挑戦。</p>
         <a class="go go--coral" href="#price">子どもクラスへ<svg><use href="#arrow"/></svg></a>
       </article>
       <article class="class">
-        <img src="assets/img/adult.webp" alt="窓辺で水彩画を描く大人" width="430" height="280" loading="lazy">
+        <div class="pl"><img src="assets/img/adult.webp" alt="窓辺で水彩画を描く大人" width="430" height="280" loading="lazy"></div>
         <p class="tag tag--indigo">大人</p>
         <h3>大人クラス</h3>
         <p>昔好きだった絵を、もう一度。油絵や透明水彩を基礎から。</p>
@@ -122,6 +132,7 @@
   <section class="sec" id="features">
     <img class="sec__deco" src="assets/img/il-girl.webp" alt="" width="150" height="130" loading="lazy">
     <header class="head"><h2>3つの特徴</h2><p>FEATURES</p></header>
+    <ol class="steps" aria-hidden="true"><li class="is-on"><b>01</b>素材</li><li><b>02</b>少人数</li><li><b>03</b>講師</li><i><i></i></i></ol>
     <div class="cards">
       <article class="card">
         <div class="card__top"><div><p class="en">MATERIALS</p><h3>素材を横断する</h3></div><span class="ic"><img src="assets/img/ic-blocks.webp" alt="" width="64" height="64" loading="lazy"></span></div>
@@ -153,7 +164,7 @@
 </div>
 
 <section class="teacher" id="teacher">
-  <div class="teacher__band">
+  <div class="teacher__band"><div class="teacher__bg"></div>
     <h2>講師紹介</h2>
     <p class="en">TEACHER</p>
     <a class="btn btn--green" href="https://artewald.com/artclass/" target="_blank" rel="noopener">講師の壁画の仕事を見る<svg><use href="#arrow"/></svg></a>
@@ -281,6 +292,8 @@
 
 <a class="tab" href="#contact"><i></i>体験レッスン受付中</a>
 <a class="spbar" href="#contact">体験を申し込む<svg><use href="#arrow"/></svg></a>
+<script src="assets/js/vendor/gsap.min.js"></script>
+<script src="assets/js/vendor/ScrollTrigger.min.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>

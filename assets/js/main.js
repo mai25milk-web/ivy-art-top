@@ -54,11 +54,10 @@
   if (!reduce) {
     var frames = [].slice.call(document.querySelectorAll('.frame')), turn = 0;
     setInterval(function () {
-      var imgs = frames[turn % frames.length].children, i = 0;
+      var imgs = frames[turn++ % frames.length].children, i = 0;
       for (var k = 0; k < imgs.length; k++) if (imgs[k].classList.contains('is-on')) i = k;
       imgs[i].classList.remove('is-on');
       imgs[(i + 1) % imgs.length].classList.add('is-on');
-      turn++;
     }, 3200);
   }
 

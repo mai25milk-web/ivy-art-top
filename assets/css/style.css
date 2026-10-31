@@ -372,3 +372,12 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .mq__track,.hero__scroll::before{animation:none}
   *{transition:none!important}
 }
+
+/* Instagram の埋め込み */
+.ig-embeds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:start;width:100%}
+.ig-embeds .instagram-media,.ig-embeds .instagram-media-rendered{min-width:0!important;max-width:none!important;width:100%!important;margin:0!important;border-radius:12px!important}
+.ig-embeds blockquote{padding:16px;background:#fff;border-radius:12px;font-size:14px}
+@media (max-width:767px){
+  .ig-embeds{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:6px}
+  .ig-embeds>*{flex:0 0 80%;scroll-snap-align:start}
+}

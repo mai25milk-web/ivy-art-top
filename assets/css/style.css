@@ -43,8 +43,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .hero__copy{position:absolute;z-index:2;left:80px;top:170px;width:470px}
 .hero__palette{position:absolute;right:30px;top:-2px;width:120px}
 .hero__place{font-size:15px;font-weight:700;color:var(--green);letter-spacing:.06em;margin-top:150px}
-.hero h1{margin-top:28px;font-size:42px;letter-spacing:.1em}
-.hero h1 span{display:block;padding-bottom:12px;margin-bottom:24px;border-bottom:2px dashed var(--yellow)}
+.hero__catch{margin-top:28px;font-size:42px;letter-spacing:.1em}
+.hero__catch span{display:block;padding-bottom:12px;margin-bottom:24px;border-bottom:2px dashed var(--yellow)}
 .hero__en{font-family:Quicksand,sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;line-height:2}
 .hero__ils{display:flex;justify-content:space-between;align-items:flex-end;margin-top:20px;width:420px}
 .hero__ils img:first-child{width:84px}.hero__ils img:last-child{width:180px}
@@ -246,12 +246,12 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .curtain__logo small{font-size:15px;font-weight:700;letter-spacing:.08em}
 .splash .hd,.splash .tab,.splash .spbar{opacity:0}
 .hd,.tab,.spbar{transition:opacity 1.2s ease}
-.splash .hero__copy>*,.splash .hero h1 span,.splash .hero__scroll{opacity:0;translate:0 18px}
+.splash .hero__copy>*,.splash .hero__catch span,.splash .hero__scroll{opacity:0;translate:0 18px}
 .splash .frame{opacity:0}
 .splash .hero__arc{translate:0 90px}
-.hero__copy>*,.hero h1 span,.hero__scroll,.hero__arc{transition:opacity 1.6s ease,translate 1.6s var(--slow)}
+.hero__copy>*,.hero__catch span,.hero__scroll,.hero__arc{transition:opacity 1.6s ease,translate 1.6s var(--slow)}
 .frame{transition:opacity 1.6s ease}
-.hero h1 span:nth-child(2),.frame:nth-child(2){transition-delay:.2s}
+.hero__catch span:nth-child(2),.frame:nth-child(2){transition-delay:.2s}
 .hero__en,.frame:nth-child(3){transition-delay:.4s}
 .hero__ils,.hero__scroll{transition-delay:.6s}
 
@@ -280,7 +280,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .has-h .card::after{content:"0" counter(c);position:absolute;left:32px;bottom:18px;font-family:Quicksand,sans-serif;font-weight:700;font-size:72px;line-height:1;color:var(--beige)}
 }
 @media (max-width:1240px){
-  .hero__copy{left:40px;width:400px}.hero h1{font-size:34px}.hero__strip{left:480px}.hero__ils{width:360px}
+  .hero__copy{left:40px;width:400px}.hero__catch{font-size:34px}.hero__strip{left:480px}.hero__ils{width:360px}
   .classes,.insta{grid-template-columns:minmax(0,1fr);padding:40px}
   .hello__photos>img:nth-child(1){width:320px;height:230px}.hello__photos>img:nth-child(2){left:30%;width:290px;height:210px}
   .access{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
@@ -302,8 +302,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .hero__copy{position:relative;left:auto;top:auto;width:auto;padding:0 24px;margin-top:40px}
   .hero__palette{display:none}
   .hero__place{font-size:12px;margin-top:0}
-  .hero h1{font-size:28px;margin-top:18px;letter-spacing:.06em}
-  .hero h1 span{max-width:300px;margin-bottom:18px}
+  .hero__catch{font-size:28px;margin-top:18px;letter-spacing:.06em}
+  .hero__catch span{max-width:300px;margin-bottom:18px}
   .hero__en{font-size:11px}
   .hero__ils{position:absolute;right:16px;bottom:-145px;width:auto;gap:8px}.hero__ils img:first-child{display:none}.hero__ils img:last-child{width:120px}
   .hero__arc{height:230px}

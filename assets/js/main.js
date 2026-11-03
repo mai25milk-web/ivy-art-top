@@ -25,7 +25,7 @@
     var el = document.querySelector(a.getAttribute('href'));
     if (!el) return;
     e.preventDefault();
-    var offset = a.getAttribute('href') === '#top' ? 0 : (innerWidth > 900 ? 100 : 80);
+    var offset = a.getAttribute('href') === '#top' ? 0 : (innerWidth > 1023 ? 96 : 80);
     window.scrollTo({ top: el.getBoundingClientRect().top + scrollY - offset, behavior: reduce ? 'auto' : 'smooth' });
   });
 
@@ -86,7 +86,7 @@
   gsap.fromTo('.teacher__bg', { yPercent: -8, scale: 1.1 }, { yPercent: 8, scale: 1, ease: 'none', scrollTrigger: { trigger: '.teacher__band', start: 'top bottom', end: 'bottom top', scrub: true } });
 
   var mm = gsap.matchMedia();
-  mm.add('(min-width:901px)', function () {
+  mm.add('(min-width:1024px)', function () {
     // 傾けた写真は速さを変えて重なりをずらす
     document.querySelectorAll('.hello__photos>img').forEach(function (el, i) {
       gsap.fromTo(el, { y: 36 - i * 14 }, { y: -36 - i * 22, ease: 'none', scrollTrigger: { trigger: '.hello__photos', start: 'top bottom', end: 'bottom top', scrub: true } });

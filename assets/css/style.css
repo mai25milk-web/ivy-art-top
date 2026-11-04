@@ -1,9 +1,9 @@
 /* 絵画・造形教室アイビー TOP */
-/* 色はメイン（黄）＋アクセント（緑）＋無彩色寄りの文字色だけ。黄色は面の色に使い、上の文字は濃い色にする */
+/* 色はメイン（レモン黄）＋アクセント（紺）＋無彩色寄りの文字色だけ。黄色は面の色に使い、上の文字は濃い色にする */
 :root{
-  --main:#FFC93C;--main-pale:#FBF4E4;--main-pale2:#F6E9CF;--line:#EAD9B8;
-  --accent:#2F6E45;--accent-dk:#245637;
-  --ink:#5A3C22;--sub:#6B5843;--shade:#2B1D10;
+  --main:#FFEB7B;--main-pale:#FFFBE8;--main-pale2:#FFF3C2;--line:#F2E3A6;
+  --accent:#2F4A7A;--accent-dk:#243B63;
+  --ink:#3D3A33;--sub:#605B50;--shade:#2B1D10;
   /* 余白のトークン（8の倍数。4だけ例外） */
   --s-xs:4px;--s-1:8px;--s-2:16px;--s-3:24px;--s-4:32px;--s-5:40px;--s-6:48px;--s-7:64px;--s-8:80px;--s-9:96px;--s-10:128px;
   /* 見出し4段（PC） */

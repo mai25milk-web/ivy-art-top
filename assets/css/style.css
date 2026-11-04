@@ -180,7 +180,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 /* 料金 */
 .price{max-width:1320px;width:calc(100% - 120px);margin:0 auto var(--s-7)}
 .price__box{background:var(--main-pale2);border-radius:32px;padding:var(--s-7) var(--s-6) var(--s-6)}
-.price__list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-3)}
+.price__list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s-3)}
 .price__list article{background:#fff;border-radius:24px;padding:var(--s-2) var(--s-4) var(--s-3)}
 .price__list h3{font-size:var(--h-4);margin-top:var(--s-1)}
 .price__time{font-size:14px;color:var(--sub);padding-bottom:var(--s-2);margin-bottom:var(--s-2);border-bottom:2px dashed var(--line)}

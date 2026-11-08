@@ -1,8 +1,9 @@
 /* 絵画・造形教室アイビー TOP */
-/* 色はメイン（パステルグリーン #CFE8B6）＋アクセント（深い緑）＋無彩色寄りの文字色だけ。配色は「配色の辞書」白背景×緑（W08・K40）を参考に。緑は面の色に使い、上の文字は濃い色にする */
+/* 色は3つに分ける：ベース（白・生成り）70％／メイン（パステルグリーン）25％／アクセント（テラコッタ）5％。テラコッタはボタン・重要な数字だけ。ラベルや見出しの英字は深い緑、申し込みまわりの面はピーチ */
 :root{
-  --main:#CFE8B6;--main-pale:#F7FBF1;--main-pale2:#E6F2D8;--line:#B7D29A;
-  --accent:#46613A;--accent-dk:#36502C;
+  --main:#DDEFCB;--main-dk:#CFE8B6;--main-pale:#FBFAF4;--main-pale2:#EEF6E4;--line:#B7D29A;--green-dk:#4E6B40;
+  --peach:#F4D7B8;--peach-pale:#FCF1E6;
+  --accent:#B5563D;--accent-dk:#9A4733;
   --ink:#3D3A33;--sub:#605B50;--shade:#2B1D10;
   /* 余白のトークン（8の倍数。4だけ例外） */
   --s-xs:4px;--s-1:8px;--s-2:16px;--s-3:24px;--s-4:32px;--s-5:40px;--s-6:48px;--s-7:64px;--s-8:80px;--s-9:96px;--s-10:128px;
@@ -21,16 +22,16 @@ em,i{font-style:normal}
 h1,h2,h3{font-weight:700;line-height:1.5}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .defs{position:absolute}
-.en{font-family:Quicksand,sans-serif;font-weight:700;letter-spacing:.14em;color:var(--accent);font-size:14px}
+.en{font-family:Quicksand,sans-serif;font-weight:700;letter-spacing:.14em;color:var(--green-dk);font-size:14px}
 .only-sp{display:none}
-:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+:focus-visible{outline:3px solid var(--green-dk);outline-offset:2px}
 
 /* ヘッダー */
 .hd{position:fixed;inset:0 0 auto;z-index:30;height:96px;display:flex;justify-content:space-between;align-items:center;padding:0 var(--s-3) 0 var(--s-5);pointer-events:none}
 .hd>*{pointer-events:auto}
 .logo{display:flex;align-items:center;gap:var(--s-1);padding:var(--s-1) var(--s-2) var(--s-1) var(--s-1);border-radius:12px;transition:background .4s var(--ease)}
 .hd.is-scrolled .logo{background:#fff}
-.logo__leaf{width:42px;height:40px;color:var(--accent)}
+.logo__leaf{width:42px;height:40px;color:var(--green-dk)}
 .logo__txt{display:flex;flex-direction:column;line-height:1.1}
 .logo__txt b{font-family:Quicksand,sans-serif;font-size:33px}
 .logo__txt small{font-size:11.5px;font-weight:700;letter-spacing:.06em}
@@ -98,7 +99,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .pl{aspect-ratio:430/280;overflow:hidden;border-radius:16px;border:4px solid var(--main)}
 .pl img{width:100%;height:118%;max-width:none;object-fit:cover}
 .tag{display:inline-block;padding:0 var(--s-2);margin-top:var(--s-3);border-radius:99px;font-size:12px;font-weight:700}
-.tag--main{background:var(--main);color:var(--ink)}.tag--accent{background:var(--accent);color:#fff}
+.tag--main{background:var(--main-dk);color:var(--ink)}.tag--accent{background:var(--accent);color:#fff}
 .class h3{font-size:var(--h-3);letter-spacing:.08em;margin-top:var(--s-1)}
 .class>p:not(.tag){min-height:56px}
 
@@ -129,7 +130,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .head::before,.head::after{content:"";position:absolute;top:4px;bottom:8px;width:4px;border-radius:2px;background:var(--ink)}
 .head::before{left:0}.head::after{right:0}
 .head h2{font-size:var(--h-2);letter-spacing:.06em;white-space:nowrap}
-.head p{font-family:Quicksand,sans-serif;font-weight:700;font-size:14px;letter-spacing:.14em;color:var(--accent)}
+.head p{font-family:Quicksand,sans-serif;font-weight:700;font-size:14px;letter-spacing:.14em;color:var(--green-dk)}
 .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-4)}
 .card{background:#fff;border-radius:24px;padding:var(--s-4);display:flex;flex-direction:column}
 .card__top{display:flex;justify-content:space-between;gap:var(--s-1);align-items:flex-start}
@@ -144,7 +145,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .mats{margin:0 0 var(--s-3);padding:var(--s-2);background:var(--main-pale);border-radius:16px}
 .mats__label{font-size:13px;font-weight:700;margin-bottom:var(--s-1)}
 .mats ul{display:flex;flex-wrap:wrap;gap:var(--s-1)}
-.mats li{padding:0 var(--s-2);background:var(--main);border-radius:99px;font-size:14px;font-weight:700;line-height:32px}
+.mats li{padding:0 var(--s-2);background:var(--main-dk);border-radius:99px;font-size:14px;font-weight:700;line-height:32px}
 .lead{text-align:center;font-size:16px;margin-bottom:var(--s-6)}
 .powers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-4)}
 .powers article{background:#fff;border-radius:24px;padding:var(--s-4) var(--s-5);text-align:center}
@@ -198,10 +199,10 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .faq details{background:#fff;border-radius:16px;margin-bottom:var(--s-2)}
 .faq summary{display:flex;align-items:center;gap:var(--s-3);padding:var(--s-3) var(--s-7) var(--s-3) var(--s-4);font-size:17px;font-weight:700;cursor:pointer;list-style:none;position:relative}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::before,.faq summary::after{content:"";position:absolute;right:var(--s-4);top:50%;width:16px;height:2.4px;margin-top:-1px;background:var(--accent);border-radius:2px;transition:transform .3s var(--ease)}
+.faq summary::before,.faq summary::after{content:"";position:absolute;right:var(--s-4);top:50%;width:16px;height:2.4px;margin-top:-1px;background:var(--green-dk);border-radius:2px;transition:transform .3s var(--ease)}
 .faq summary::after{transform:rotate(90deg)}
 .faq details[open] summary::after{transform:rotate(0)}
-.faq i{flex:none;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--main);font-family:Quicksand,sans-serif;font-weight:700;line-height:1}
+.faq i{flex:none;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--main-dk);font-family:Quicksand,sans-serif;font-weight:700;line-height:1}
 .faq details>p{display:flex;gap:var(--s-3);align-items:center;margin:0 var(--s-4);padding:var(--s-2) 0 var(--s-3);border-top:2px dashed var(--line)}
 .faq details>p i{background:var(--accent);color:#fff}
 
@@ -210,19 +211,19 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .access iframe{width:100%;height:336px;border:0;border-radius:16px;background:var(--main-pale2)}
 .access h3{font-size:var(--h-4);margin:var(--s-2) 0}
 .access dl div{display:grid;grid-template-columns:96px minmax(0,1fr);gap:var(--s-2);margin-bottom:var(--s-2);align-items:start}
-.access dt{background:var(--accent);color:#fff;border-radius:99px;text-align:center;font-size:12px;font-weight:700;line-height:24px;margin-top:var(--s-xs)}
+.access dt{background:var(--green-dk);color:#fff;border-radius:99px;text-align:center;font-size:12px;font-weight:700;line-height:24px;margin-top:var(--s-xs)}
 .wave--down{margin-top:-1px}
 
 /* 体験申込 */
 .contact{position:relative;background:var(--main);padding:var(--s-6) var(--s-3) 144px}
 .contact__form,.contact__dm{max-width:1000px;margin:0 auto;border-radius:24px}
 .contact__form{background:#fff;padding:var(--s-2)}
-.contact__in{display:flex;align-items:center;justify-content:space-between;gap:var(--s-3);padding:var(--s-4) var(--s-6);background:var(--main-pale);border:2px dashed var(--main);border-radius:16px}
+.contact__in{display:flex;align-items:center;justify-content:space-between;gap:var(--s-3);padding:var(--s-4) var(--s-6);background:var(--peach-pale);border:2px dashed var(--peach);border-radius:16px}
 .contact__in h2{font-size:var(--h-3);padding-bottom:var(--s-1);margin-bottom:var(--s-2);border-bottom:2px dashed var(--main);display:inline-block}
 .contact__in p{font-size:14px}
 .contact__in img{width:160px}
 .contact__in .btn{flex:none;min-width:240px}
-.contact__dm{position:relative;margin-top:var(--s-7);background:var(--accent);padding:var(--s-6) var(--s-5) var(--s-5)}
+.contact__dm{position:relative;margin-top:var(--s-7);background:var(--peach);padding:var(--s-6) var(--s-5) var(--s-5)}
 .contact__label{position:absolute;left:50%;top:-24px;transform:translateX(-50%);display:flex;align-items:center;gap:var(--s-1);height:48px;padding:0 var(--s-4);background:#fff;border-radius:99px;font-weight:700;white-space:nowrap}
 .contact__label svg{width:24px;height:24px;color:var(--accent)}
 .contact__box{display:flex;justify-content:space-between;align-items:center;gap:var(--s-3);padding:var(--s-3) var(--s-5);background:#fff;border-radius:16px}
@@ -258,7 +259,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .curtain.is-out{background-color:transparent;pointer-events:none}
 .curtain__logo{text-align:center;opacity:0;transition:opacity 1.2s ease,transform 1.7s var(--slow);line-height:1.2}
 .curtain.is-in .curtain__logo{opacity:1}
-.curtain__logo svg{display:block;width:84px;height:80px;margin:0 auto var(--s-xs);color:var(--accent)}
+.curtain__logo svg{display:block;width:84px;height:80px;margin:0 auto var(--s-xs);color:var(--green-dk)}
 .curtain__logo p{font-family:Quicksand,sans-serif;font-weight:700;font-size:56px}
 .curtain__logo small{font-size:15px;font-weight:700;letter-spacing:.08em}
 .splash .hd,.splash .tab,.splash .spbar{opacity:0}

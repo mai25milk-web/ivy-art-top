@@ -35,7 +35,7 @@
     root.classList.remove('splash');
     try { sessionStorage.setItem('ivy-splash', '1'); } catch (e) { /* 保存できなくても動く */ }
   }
-  if (root.classList.contains('splash')) {
+  if (root.classList.contains('splash') && curtain) {
     var mark = curtain.querySelector('.curtain__logo'), goal = document.querySelector('.hd .logo__leaf');
     requestAnimationFrame(function () { curtain.classList.add('is-in'); });
     setTimeout(function () {
@@ -63,7 +63,7 @@
 
   /* 静かな出現。並んでいるものは少しずつ遅らせる */
   if (!reduce && 'IntersectionObserver' in window) {
-    var sel = '.classes__head,.class,.hello__txt,.hello__figs figure,.head,.lead,.powers article,.teacher__card,.insta__head,.insta__grid img,.price__list article,.price__info,.price__note,.faq details,.access,.contact__form,.contact__dm,.ft__main,.ft__cols>div';
+    var sel = '.sub-hero__txt,.sub-hero__ph,.classes__head,.class,.hello__txt,.hello__figs figure,.head,.lead,.powers article,.teacher__card,.insta__head,.insta__grid img,.price__list article,.price__info,.price__note,.faq details,.access,.contact__form,.contact__dm,.ft__main,.ft__cols>div';
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('on'); io.unobserve(en.target); } });
     }, { rootMargin: '0px 0px -10% 0px' });
@@ -83,7 +83,7 @@
   document.querySelectorAll('.pl img').forEach(function (el) {
     gsap.fromTo(el, { yPercent: -15 }, { yPercent: 0, ease: 'none', scrollTrigger: { trigger: el.parentNode, start: 'top bottom', end: 'bottom top', scrub: true } });
   });
-  gsap.fromTo('.teacher__bg', { yPercent: -8, scale: 1.1 }, { yPercent: 8, scale: 1, ease: 'none', scrollTrigger: { trigger: '.teacher__band', start: 'top bottom', end: 'bottom top', scrub: true } });
+  if (document.querySelector('.teacher__bg')) gsap.fromTo('.teacher__bg', { yPercent: -8, scale: 1.1 }, { yPercent: 8, scale: 1, ease: 'none', scrollTrigger: { trigger: '.teacher__band', start: 'top bottom', end: 'bottom top', scrub: true } });
 
   var mm = gsap.matchMedia();
   mm.add('(min-width:1024px)', function () {
@@ -95,9 +95,10 @@
     document.querySelectorAll('.frame').forEach(function (el, i) {
       gsap.to(el, { y: -40 - i * 30, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
     });
-    // 3つの特徴：固定して横へ送る
+    // 3つの特徴：固定して横へ送る（トップのみ）
+    var sec = document.getElementById('features'), track = sec && sec.querySelector('.cards');
+    if (!track) return;
     root.classList.add('has-h');
-    var sec = document.getElementById('features'), track = sec.querySelector('.cards');
     var steps = sec.querySelectorAll('.steps li'), bar = sec.querySelector('.steps>i>i');
     var dist = function () { return Math.max(0, track.scrollWidth - innerWidth); };
     gsap.to(track, {

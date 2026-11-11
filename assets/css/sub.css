@@ -1,0 +1,23 @@
+/* 下層ページ（クラス・申し込み）。色・余白・見出しはトップの style.css のトークンをそのまま使う */
+.sub-hero{position:relative;background:var(--main);padding:144px 0 0}
+.sub-hero__in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s-7);align-items:center;max-width:1200px;width:calc(100% - 120px);margin:0 auto;padding-bottom:var(--s-8)}
+.crumbs{display:flex;flex-wrap:wrap;gap:var(--s-1);list-style:none;font-size:13px;font-weight:700;max-width:1200px;width:calc(100% - 120px);margin:0 auto var(--s-4)}
+.crumbs li+li::before{content:"＞";margin-right:var(--s-1);color:var(--sub)}
+.crumbs a{text-decoration:underline;text-underline-offset:4px}
+.sub-hero .tag{margin-bottom:var(--s-2)}
+.sub-hero .tag--main{background:#fff}
+.sub-hero h1{font-size:var(--h-1);line-height:1.4;letter-spacing:.06em}
+.sub-hero .en{margin-bottom:var(--s-3)}
+.sub-hero__lead{font-size:16px;line-height:2;margin-bottom:var(--s-5);max-width:30em}
+.sub-hero__ph{border:8px solid #fff;border-radius:32px;overflow:hidden;aspect-ratio:3/2;background:#fff}
+.sub-hero__ph img{width:100%;height:100%;object-fit:cover;display:block}
+.sub-hero .wave{position:relative;margin-bottom:-1px}
+@media (max-width:1023px){
+  .sub-hero{padding-top:112px}
+  .sub-hero__in{grid-template-columns:minmax(0,1fr);gap:var(--s-4);width:calc(100% - 48px);padding-bottom:var(--s-6)}
+  .sub-hero__ph{order:-1;border-width:4px;border-radius:24px;aspect-ratio:16/9}
+  .sub-hero h1{line-height:1.3}
+  .sub-hero .en{margin-bottom:var(--s-2)}
+  .crumbs{width:calc(100% - 48px);margin-bottom:var(--s-2)}
+  .sub-hero__lead{font-size:15px;margin-bottom:var(--s-4)}
+}

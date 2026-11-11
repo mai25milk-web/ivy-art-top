@@ -11,7 +11,7 @@
   --h-1:56px;--h-2:40px;--h-3:28px;--h-4:20px;
   --ease:cubic-bezier(.4,.4,0,1);--slow:cubic-bezier(.65,0,.35,1)
 }
-@media (max-width:768px){:root{--h-1:36px;--h-2:28px;--h-3:22px;--h-4:18px}}
+@media (max-width:767px){:root{--h-1:36px;--h-2:28px;--h-3:22px;--h-4:18px}}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-padding-top:var(--s-9)}
 body{font-family:"Zen Maru Gothic",sans-serif;font-weight:500;color:var(--ink);background:#fff;line-height:1.9;font-size:15px;-webkit-font-smoothing:antialiased;overflow-x:clip}
@@ -31,7 +31,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .hd>*{pointer-events:auto}
 .logo{display:flex;align-items:center;gap:var(--s-1);padding:var(--s-1) var(--s-2) var(--s-1) var(--s-1);border-radius:12px;transition:background .4s var(--ease)}
 .hd.is-scrolled .logo{background:#fff}
-.logo__leaf{width:42px;height:40px;color:var(--green-dk)}
+.logo__leaf{width:40px;height:40px;color:var(--green-dk)}
 .logo__txt{display:flex;flex-direction:column;line-height:1.1}
 .logo__txt b{font-family:Quicksand,sans-serif;font-size:33px}
 .logo__txt small{font-size:11.5px;font-weight:700;letter-spacing:.06em}
@@ -50,7 +50,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .nav a:hover{text-decoration:underline}
 
 /* ボタン：文字は矢印を除いた部分の中央、矢印は右端に固定 */
-.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;min-height:64px;padding:0 var(--s-8) 0 var(--s-4);border-radius:8px;font-weight:700;font-size:16px;line-height:1.5;text-align:center;transition:background .4s var(--ease)}
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;min-height:64px;padding:0 calc(var(--s-8) + var(--s-1)) 0 var(--s-4);border-radius:8px;font-weight:700;font-size:16px;line-height:1.5;text-align:center;transition:background .4s var(--ease)}
 .btn svg{position:absolute;right:var(--s-3);top:50%;width:24px;height:24px;margin-top:-12px;transition:transform .4s var(--ease)}
 .btn:hover svg{transform:translateX(4px)}
 .btn--green{background:var(--accent);color:#fff;--arrow-fg:var(--accent)}
@@ -105,8 +105,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .hello{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s-5) var(--s-7);max-width:1320px;width:calc(100% - 120px);margin:0 auto;padding:var(--s-9) 0 0}
 .hello__photos{position:relative;height:544px}
 .hello__photos>img{position:absolute;padding:var(--s-1);background:#fff;border-radius:16px;object-fit:cover;height:auto}
-.hello__photos>img:nth-child(1){left:2%;top:0;width:min(380px,86%);aspect-ratio:38/27;transform:rotate(-6deg)}
-.hello__photos>img:nth-child(2){right:0;top:216px;width:min(340px,64%);aspect-ratio:34/24;transform:rotate(5deg)}
+.hello__photos>img:nth-child(1){left:2%;top:0;width:min(384px,86%);aspect-ratio:38/27;transform:rotate(-6deg)}
+.hello__photos>img:nth-child(2){right:0;top:216px;width:min(336px,64%);aspect-ratio:34/24;transform:rotate(5deg)}
 .hello__photos>img:nth-child(3){left:0;top:320px;width:min(280px,54%);aspect-ratio:28/20;transform:rotate(-3deg)}
 .hello__photos>img.hello__deco{left:66%;top:0;width:112px;padding:0;background:none;border-radius:0;aspect-ratio:auto}
 .hello__txt{padding-top:var(--s-7)}
@@ -366,7 +366,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .contact__in img{width:120px}
   .contact__in .btn,.contact__box .btn{width:100%;max-width:400px;min-height:56px}
   .contact__dm{padding:var(--s-6) var(--s-2) var(--s-3);border-radius:24px}
-  .contact__label{height:40px;padding:0 var(--s-3);font-size:13px;top:-20px}
+  .contact__label{height:40px;padding:0 var(--s-3);font-size:13px;top:-24px}
   .contact__box{flex-direction:column;padding:var(--s-3) var(--s-2);text-align:center;font-size:13px}
   .contact__arc{height:40px}
   .mq{padding:var(--s-3) 0 var(--s-4)}.mq span{font-size:26px}.mq img{width:24px;height:24px}.mq__track{gap:var(--s-2)}
@@ -377,11 +377,11 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .spbar::before{content:"";position:absolute;inset:var(--s-2);background:var(--accent);border-radius:8px;z-index:-1}
   .spbar svg{position:absolute;right:var(--s-5);top:50%;margin-top:-12px;width:24px;height:24px;color:#fff}
 }
-@media (min-width:769px) and (max-width:1023px){
+@media (min-width:768px) and (max-width:1023px){
   .classes__list{grid-template-columns:repeat(2,minmax(0,1fr))}
   .cards,.powers{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
-@media (max-width:768px){
+@media (max-width:767px){
   .classes__list{grid-template-columns:minmax(0,1fr)}
   .classes__head p:last-child{display:none}
   .hero__copy{padding:0 var(--s-2)}

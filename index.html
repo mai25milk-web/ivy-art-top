@@ -6,10 +6,18 @@
 <meta name="robots" content="noindex,nofollow">
 <title>横浜市旭区中白根の絵画教室・造形教室｜アイビー</title>
 <meta name="description" content="横浜市旭区中白根の絵画・造形教室アイビー。小学生から大人まで、絵画から木や粘土の立体まで。現役の壁画アーティストが少人数で教えます。">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="絵画・造形教室アイビー">
+<meta property="og:title" content="横浜市旭区中白根の絵画教室・造形教室｜アイビー">
+<meta property="og:description" content="小学生から大人まで、絵画から木や粘土の立体まで。現役の壁画アーティストが少人数で教えます。">
+<meta property="og:image" content="https://mai25milk-web.github.io/ivy-art-top/assets/img/ogp.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"絵画・造形教室アイビー","url":"https://mai25milk-web.github.io/ivy-art-top/","image":"https://mai25milk-web.github.io/ivy-art-top/assets/img/ogp.jpg","sameAs":["https://www.instagram.com/painting.art.class/"],"address":{"@type":"PostalAddress","addressCountry":"JP","addressRegion":"神奈川県","addressLocality":"横浜市旭区","streetAddress":"中白根2-13-32 金子ハイツC-101"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=g4">
+<link rel="stylesheet" href="assets/css/style.css?v=g5">
 </head>
 <body>
 <script>
@@ -291,6 +299,10 @@ if(!s&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.document
 <script src="assets/js/vendor/gsap.min.js"></script>
 <script src="assets/js/vendor/ScrollTrigger.min.js"></script>
 <script src="assets/js/main.js?v=2"></script>
-<script async src="https://www.instagram.com/embed.js"></script>
+<script>
+// Instagram の埋め込みは重いので、教室の様子に近づいてから読み込む
+(function(){var box=document.querySelector('.ig-embeds');if(!box)return;var go=function(){var s=document.createElement('script');s.async=true;s.src='https://www.instagram.com/embed.js';document.body.appendChild(s);};
+if(!('IntersectionObserver' in window))return go();var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){io.disconnect();go();}},{rootMargin:'800px 0px'});io.observe(box);})();
+</script>
 </body>
 </html>

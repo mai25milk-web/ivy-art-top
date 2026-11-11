@@ -51,8 +51,8 @@
   }
 
   /* ヒーローの写真：枠ごとに順番にクロスフェード */
-  if (!reduce) {
-    var frames = [].slice.call(document.querySelectorAll('.frame')), turn = 0;
+  var frames = [].slice.call(document.querySelectorAll('.frame')), turn = 0;
+  if (!reduce && frames.length) {
     setInterval(function () {
       var imgs = frames[turn++ % frames.length].children, i = 0;
       for (var k = 0; k < imgs.length; k++) if (imgs[k].classList.contains('is-on')) i = k;

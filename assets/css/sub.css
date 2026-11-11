@@ -95,3 +95,7 @@ body:has(.sub-hero) .hd .logo{background:#fff}
   .cta-b{padding:var(--s-8) var(--s-3)}
   .cta-b .btn{width:100%;max-width:400px}
 }
+
+/* 同じ背景が3つ続かないよう、材料のセクションは白にする */
+.white-band{background:#fff;padding:var(--s-4) 0}
+.white-band .sec--tight{padding-top:var(--s-7);padding-bottom:var(--s-7)}

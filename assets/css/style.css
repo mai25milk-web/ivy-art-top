@@ -50,7 +50,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .nav a:hover{text-decoration:underline}
 
 /* ボタン：文字は矢印を除いた部分の中央、矢印は右端に固定 */
-.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;min-height:64px;padding:0 calc(var(--s-8) + var(--s-1)) 0 var(--s-4);border-radius:8px;font-weight:700;font-size:16px;line-height:1.5;text-align:center;transition:background .4s var(--ease)}
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;min-height:64px;padding:0 calc(var(--s-8) + var(--s-1));border-radius:8px;font-weight:700;font-size:16px;line-height:1.5;text-align:center;transition:background .4s var(--ease)}
 .btn svg{position:absolute;right:var(--s-3);top:50%;width:24px;height:24px;margin-top:-12px;transition:transform .4s var(--ease)}
 .btn:hover svg{transform:translateX(4px)}
 .btn--green{background:var(--accent);color:#fff;--arrow-fg:var(--accent)}
@@ -341,7 +341,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .powers .ic{margin:0;width:80px;height:80px}.powers .ic img{width:64px;height:64px}
   .powers p{font-size:13px;margin-top:0;line-height:1.7}
   .teacher__band{height:304px}.teacher__band .en{font-size:12px;margin-bottom:var(--s-2)}
-  .teacher__band .btn{min-height:48px;font-size:13px;padding:0 var(--s-7) 0 var(--s-3)}
+  .teacher__band .btn{min-height:48px;font-size:13px;padding:0 var(--s-7)}
   .teacher__band .btn svg{right:var(--s-2)}
   .teacher__wave{height:24px}
   .teacher__body{padding:var(--s-4) var(--s-2) var(--s-5)}.teacher__card{padding:var(--s-3) var(--s-3)}
@@ -402,3 +402,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 }
 /* 黄色の上の英字ラベルは文字色にする（緑だとコントラストが足りない） */
 .band--faq .head p{color:var(--ink)}
+/* ボタンの文字は四角全体に対して中央（矢印・アイコンは左右の余白に置く） */
+.insta__btn{position:relative;justify-content:center;padding:0 calc(var(--s-5) + var(--s-1))}
+.insta__btn svg{position:absolute;left:var(--s-2);top:50%;margin-top:-12px}
+@media (max-width:767px){.btn{padding:0 calc(var(--s-6) + var(--s-1))}}

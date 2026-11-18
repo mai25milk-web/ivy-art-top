@@ -6,20 +6,20 @@
   --accent:#B5563D;--accent-dk:#9A4733;
   --ink:#3D3A33;--sub:#605B50;--shade:#2B1D10;
   /* 余白のトークン（8の倍数。4だけ例外） */
-  --s-xs:4px;--s-1:8px;--s-2:16px;--s-3:24px;--s-4:32px;--s-5:40px;--s-6:48px;--s-7:64px;--s-8:80px;--s-9:96px;--s-10:128px;
+  --s-xs:4px;--s-1:8px;--s-2:16px;--s-3:24px;--s-4:32px;--s-5:40px;--s-6:48px;--s-7:64px;--s-8:80px;--s-9:96px;--s-10:120px;
   /* 見出し4段（PC） */
   --h-1:56px;--h-2:40px;--h-3:28px;--h-4:20px;
   --ease:cubic-bezier(.4,.4,0,1);--slow:cubic-bezier(.65,0,.35,1)
 }
-@media (max-width:767px){:root{--h-1:36px;--h-2:28px;--h-3:22px;--h-4:18px}}
+@media (max-width:767px){:root{--h-1:36px;--h-2:28px;--h-3:20px;--h-4:18px}}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-padding-top:var(--s-9)}
-body{font-family:"Zen Maru Gothic",sans-serif;font-weight:500;color:var(--ink);background:#fff;line-height:1.9;font-size:15px;-webkit-font-smoothing:antialiased;overflow-x:clip}
+body{font-family:"Zen Maru Gothic",sans-serif;font-weight:500;color:var(--ink);background:#fff;--lh:1.75;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:clip}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit;text-decoration:none}
 ul{list-style:none}
 em,i{font-style:normal}
-h1,h2,h3{font-weight:700;line-height:1.5}
+h1,h2,h3{font-weight:700;--lh:1.5}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .defs{position:absolute}
 .en{font-family:Quicksand,sans-serif;font-weight:700;letter-spacing:.14em;color:var(--green-dk);font-size:14px}
@@ -32,9 +32,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .logo{display:flex;align-items:center;gap:var(--s-1);padding:var(--s-1) var(--s-2) var(--s-1) var(--s-1);border-radius:12px;transition:background .4s var(--ease)}
 .hd.is-scrolled .logo{background:#fff}
 .logo__leaf{width:40px;height:40px;color:var(--green-dk)}
-.logo__txt{display:flex;flex-direction:column;line-height:1.1}
-.logo__txt b{font-family:Quicksand,sans-serif;font-size:33px}
-.logo__txt small{font-size:11.5px;font-weight:700;letter-spacing:.06em}
+.logo__txt{display:flex;flex-direction:column;--lh:1.1}
+.logo__txt b{font-family:Quicksand,sans-serif;font-size:32px}
+.logo__txt small{font-size:12px;font-weight:700;letter-spacing:.06em}
 .hd__r{display:flex;gap:var(--s-2)}
 .hd__cta{display:flex;align-items:center;height:56px;padding:0 var(--s-4);border-radius:8px;background:var(--accent);color:#fff;font-weight:700;font-size:16px;transition:background .4s var(--ease)}
 .hd__cta:hover{background:var(--accent-dk)}
@@ -50,7 +50,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .nav a:hover{text-decoration:underline}
 
 /* ボタン：文字は矢印を除いた部分の中央、矢印は右端に固定 */
-.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;min-height:64px;padding:0 calc(var(--s-8) + var(--s-1));border-radius:8px;font-weight:700;font-size:16px;line-height:1.5;text-align:center;transition:background .4s var(--ease)}
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 calc(var(--s-8) + var(--s-1));border-radius:8px;font-weight:700;font-size:16px;--lh:1.5;text-align:center;transition:background .4s var(--ease)}
 .btn svg{position:absolute;right:var(--s-3);top:50%;width:24px;height:24px;margin-top:-12px;transition:transform .4s var(--ease)}
 .btn:hover svg{transform:translateX(4px)}
 .btn--green{background:var(--accent);color:#fff;--arrow-fg:var(--accent)}
@@ -66,11 +66,11 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .hero{position:relative;height:960px;background:#fff;overflow:hidden}
 .hero__copy{position:absolute;z-index:2;left:clamp(40px,calc(40px + (100vw - 1024px) * .096),80px);top:112px;width:520px}
 .hero__palette{position:absolute;right:var(--s-4);top:0;width:120px}
-.hero__catch{margin-top:136px;font-size:var(--h-1);font-weight:700;letter-spacing:0;line-height:1.5;white-space:nowrap}
+.hero__catch{margin-top:120px;font-size:var(--h-1);font-weight:700;letter-spacing:0;--lh:1.5;white-space:nowrap}
 .nw{white-space:nowrap}
 .hero__catch span{display:block;padding-bottom:var(--s-1);margin-bottom:var(--s-2);border-bottom:2px dashed var(--main)}
 .hero__catch span:first-child{font-size:var(--h-3);letter-spacing:.12em;border:0;padding:0;margin-bottom:var(--s-xs)}
-.hero__sub{font-size:15px;font-weight:700;line-height:1.9}
+.hero__sub{font-size:16px;font-weight:700;--lh:1.75}
 .hero__cta{margin-top:var(--s-3)}
 .hero__ils{display:flex;justify-content:space-between;align-items:flex-end;margin-top:var(--s-3);width:400px;padding-left:var(--s-6)}
 .hero__ils img:first-child{width:80px}.hero__ils img:last-child{width:176px}
@@ -80,8 +80,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .frame--a{left:0;top:0;width:100%;aspect-ratio:7/6;border-radius:50%}
 .frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.07);transition:opacity 3s var(--slow),transform 9s linear}
 .frame img.is-on{opacity:1;transform:none}
-.hero__scroll{position:absolute;z-index:2;left:var(--s-3);bottom:var(--s-4);width:64px;height:96px;overflow:hidden}
-.hero__scroll span{padding-left:var(--s-2);font-family:Quicksand,sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em}
+.hero__scroll{position:absolute;z-index:2;left:var(--s-3);bottom:var(--s-4);width:80px;height:96px;overflow:hidden}
+.hero__scroll span{padding-left:var(--s-2);font-family:Quicksand,sans-serif;font-weight:700;font-size:12px;letter-spacing:.14em}
 .hero__scroll::after{content:"";position:absolute;left:0;top:24px;width:1.5px;height:72px;background:rgba(90,60,34,.25)}
 .hero__scroll::before{content:"";position:absolute;z-index:1;left:0;top:24px;width:1.5px;height:72px;background:var(--ink);animation:kvline 2.4s var(--slow) infinite}
 @keyframes kvline{0%{transform:translateY(-100%)}to{transform:translateY(100%)}}
@@ -112,7 +112,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .hello__txt{padding-top:var(--s-7)}
 .hello h2{font-size:var(--h-3);letter-spacing:.1em}
 .hello h2 span{display:block;max-width:440px;padding-bottom:var(--s-1);margin-bottom:var(--s-2);border-bottom:2px dashed #fff}
-.hello__txt>p{margin:var(--s-3) 0 var(--s-5);line-height:2.1;max-width:560px}
+.hello__txt>p{margin:var(--s-3) 0 var(--s-5);--lh:2;max-width:560px}
 .hello__figs{grid-column:1/-1;display:flex;justify-content:space-around;align-items:flex-end;padding-bottom:var(--s-4)}
 .hello__figs figure{display:flex;flex-direction:column;align-items:center}
 .hello__figs img{width:232px}
@@ -134,15 +134,15 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .card{background:#fff;border-radius:24px;padding:var(--s-4);display:flex;flex-direction:column}
 .card__top{display:flex;justify-content:space-between;gap:var(--s-1);align-items:flex-start}
 .card .en{font-size:12px}
-.card h3{font-size:var(--h-3);line-height:1.4;letter-spacing:.04em}
+.card h3{font-size:var(--h-3);--lh:1.4;letter-spacing:.04em}
 .ic{flex:none;width:72px;height:72px;border-radius:50%;background:var(--main-pale);display:grid;place-items:center}
 .ic img{width:56px;height:56px;object-fit:contain}
 .ic--lg{width:128px;height:128px}.ic--lg img{width:96px;height:96px}
-.card>p{margin:var(--s-2) 0 var(--s-3);font-size:14px}
+.card>p{margin:var(--s-2) 0 var(--s-3);font-size:16px}
 .card__ph{margin-top:auto;width:100%;aspect-ratio:364/280;object-fit:cover;border-radius:16px;border:2px solid var(--main)}
 /* 使える材料（9種類） */
 .mats{margin:0 0 var(--s-3);padding:var(--s-2);background:var(--main-pale);border-radius:16px}
-.mats__label{font-size:13px;font-weight:700;margin-bottom:var(--s-1)}
+.mats__label{font-size:12px;font-weight:700;margin-bottom:var(--s-1)}
 .mats ul{display:flex;flex-wrap:wrap;gap:var(--s-1)}
 .mats li{padding:0 var(--s-2);background:var(--main-dk);border-radius:99px;font-size:14px;font-weight:700;line-height:32px}
 .lead{text-align:center;font-size:16px;margin-bottom:var(--s-6)}
@@ -150,7 +150,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .powers article{background:#fff;border-radius:24px;padding:var(--s-4) var(--s-5);text-align:center}
 .powers .ic{margin:0 auto var(--s-2)}
 .powers h3{font-size:var(--h-4);letter-spacing:.04em}
-.powers p{font-size:14px;margin-top:var(--s-1)}
+.powers p{font-size:16px;margin-top:var(--s-1)}
 
 /* 講師：写真の上は黒のオーバーレイで文字を読ませる */
 .teacher{background:var(--main)}
@@ -165,7 +165,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .teacher__card h3{font-size:var(--h-4)}
 .teacher__card>img{flex:none;width:280px;object-fit:contain}
 .badges{display:flex;flex-wrap:wrap;gap:var(--s-1);margin:var(--s-1) 0 var(--s-2)}
-.badges li{padding:0 var(--s-2);background:var(--main-pale2);border-radius:99px;font-size:13px;font-weight:700}
+.badges li{padding:0 var(--s-2);background:var(--main-pale2);border-radius:99px;font-size:12px;font-weight:700}
 .wave--cream{height:48px}
 
 /* Instagram */
@@ -186,22 +186,22 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .price__time{font-size:14px;color:var(--sub);padding-bottom:var(--s-2);margin-bottom:var(--s-2);border-bottom:2px dashed var(--line)}
 .price__yen{display:flex;align-items:baseline;gap:var(--s-1)}
 .price__yen small{font-size:14px;font-weight:700}
-.price__yen b{font-family:Quicksand,sans-serif;font-size:46px;line-height:1.2;color:var(--accent)}
+.price__yen b{font-family:Quicksand,sans-serif;font-size:48px;--lh:1.2;color:var(--accent)}
 .price__info{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:#fff;border-radius:16px;margin-top:var(--s-4);padding:var(--s-2) 0}
 .price__info div{display:flex;justify-content:center;flex-wrap:wrap;gap:0 var(--s-2);font-weight:700;padding:0 var(--s-2);text-align:center}
 .price__info div+div{border-left:1.5px solid var(--line)}
-.price__note{text-align:center;font-size:13px;color:var(--sub);margin-top:var(--s-3)}
+.price__note{text-align:center;font-size:14px;color:var(--sub);margin-top:var(--s-3)}
 
 /* FAQ（黄色の帯） */
 .band--faq .sec{padding:var(--s-7) 0 var(--s-8)}
 .faq{max-width:960px;margin:0 auto}
 .faq details{background:#fff;border-radius:16px;margin-bottom:var(--s-2)}
-.faq summary{display:flex;align-items:center;gap:var(--s-3);padding:var(--s-3) var(--s-7) var(--s-3) var(--s-4);font-size:17px;font-weight:700;cursor:pointer;list-style:none;position:relative}
+.faq summary{display:flex;align-items:center;gap:var(--s-3);padding:var(--s-3) var(--s-7) var(--s-3) var(--s-4);font-size:16px;font-weight:700;cursor:pointer;list-style:none;position:relative}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::before,.faq summary::after{content:"";position:absolute;right:var(--s-4);top:50%;width:16px;height:2.4px;margin-top:-1px;background:var(--green-dk);border-radius:2px;transition:transform .3s var(--ease)}
 .faq summary::after{transform:rotate(90deg)}
 .faq details[open] summary::after{transform:rotate(0)}
-.faq i{flex:none;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--main-dk);font-family:Quicksand,sans-serif;font-weight:700;line-height:1}
+.faq i{flex:none;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--main-dk);font-family:Quicksand,sans-serif;font-weight:700;--lh:1}
 .faq details>p{display:flex;gap:var(--s-3);align-items:center;margin:0 var(--s-4);padding:var(--s-2) 0 var(--s-3);border-top:2px dashed var(--line)}
 .faq details>p i{background:var(--accent);color:#fff}
 
@@ -214,12 +214,12 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .wave--down{margin-top:-1px}
 
 /* 体験申込 */
-.contact{position:relative;background:var(--main);padding:var(--s-6) var(--s-3) 144px}
+.contact{position:relative;background:var(--main);padding:var(--s-6) var(--s-3) 160px}
 .contact__form,.contact__dm{max-width:1000px;margin:0 auto;border-radius:24px}
 .contact__form{background:#fff;padding:var(--s-2)}
 .contact__in{display:flex;align-items:center;justify-content:space-between;gap:var(--s-3);padding:var(--s-4) var(--s-6);background:var(--peach-pale);border:2px dashed var(--peach);border-radius:16px}
 .contact__in h2{font-size:var(--h-3);padding-bottom:var(--s-1);margin-bottom:var(--s-2);border-bottom:2px dashed var(--main);display:inline-block}
-.contact__in p{font-size:14px}
+.contact__in p{font-size:16px}
 .contact__in img{width:160px}
 .contact__in .btn{flex:none;min-width:240px}
 .contact__dm{position:relative;margin-top:var(--s-7);background:var(--peach);padding:var(--s-6) var(--s-5) var(--s-5)}
@@ -236,13 +236,13 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .mq span{font-family:Quicksand,sans-serif;font-weight:700;font-size:40px;white-space:nowrap}
 .mq img{width:40px;height:40px;object-fit:contain}
 .ft__main{display:flex;gap:var(--s-7);max-width:1200px;width:calc(100% - 120px);margin:0 auto var(--s-5)}
-.ft__insta{display:flex;align-items:center;gap:var(--s-1);width:max-content;margin:var(--s-2) 0 0 var(--s-1);padding:0 var(--s-2);border:1.5px solid var(--line);border-radius:99px;background:var(--main-pale);font-size:13px;font-weight:700}
+.ft__insta{display:flex;align-items:center;gap:var(--s-1);width:max-content;margin:var(--s-2) 0 0 var(--s-1);padding:0 var(--s-2);border:1.5px solid var(--line);border-radius:99px;background:var(--main-pale);font-size:14px;font-weight:700}
 .ft__insta svg{width:16px;height:16px}
 .ft__brand{width:440px}.ft__addr h2{font-size:var(--h-4)}
-.ft__addr p{font-size:13px;color:var(--sub)}
+.ft__addr p{font-size:14px;color:var(--sub)}
 .ft__cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s-4);max-width:1200px;width:calc(100% - 120px);margin:0 auto var(--s-5)}
 .ft__cols h3{font-size:var(--h-4);margin-bottom:var(--s-1)}
-.ft__cols li{position:relative;padding-left:var(--s-2);font-size:13px;line-height:2.3}
+.ft__cols li{position:relative;padding-left:var(--s-2);font-size:14px;--lh:2.3}
 .ft__cols li::before{content:"";position:absolute;left:2px;top:12px;width:6px;height:6px;border-radius:50%;background:var(--main)}
 .ft__cols a:hover{color:var(--accent)}
 .ft__c{text-align:center;font-size:12px;color:var(--sub)}
@@ -256,11 +256,11 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .curtain{display:none}
 .splash .curtain,.curtain.is-out{display:grid;place-items:center;position:fixed;inset:0;z-index:50;background:var(--main);transition:background-color 1.5s var(--slow)}
 .curtain.is-out{background-color:transparent;pointer-events:none}
-.curtain__logo{text-align:center;opacity:0;transition:opacity 1.2s ease,transform 1.7s var(--slow);line-height:1.2}
+.curtain__logo{text-align:center;opacity:0;transition:opacity 1.2s ease,transform 1.7s var(--slow);--lh:1.2}
 .curtain.is-in .curtain__logo{opacity:1}
 .curtain__logo svg{display:block;width:84px;height:80px;margin:0 auto var(--s-xs);color:var(--green-dk)}
 .curtain__logo p{font-family:Quicksand,sans-serif;font-weight:700;font-size:56px}
-.curtain__logo small{font-size:15px;font-weight:700;letter-spacing:.08em}
+.curtain__logo small{font-size:16px;font-weight:700;letter-spacing:.08em}
 .splash .hd,.splash .tab,.splash .spbar{opacity:0}
 .hd,.tab,.spbar{transition:opacity 1.2s ease}
 .splash .hero__copy>*,.splash .hero__catch span,.splash .hero__scroll{opacity:0;translate:0 18px}
@@ -282,7 +282,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .has-h #features{max-width:none;width:100%;height:100vh;min-height:640px;padding:var(--s-9) 0 0;overflow:hidden}
   .has-h .sec__deco{display:none}
   .has-h #features .head{margin-bottom:var(--s-2)}
-  .has-h .steps{display:flex;position:relative;gap:var(--s-9);justify-content:center;list-style:none;margin:0 auto var(--s-3);width:max-content;padding-bottom:var(--s-2);font-size:13px;font-weight:700;color:var(--sub)}
+  .has-h .steps{display:flex;position:relative;gap:var(--s-9);justify-content:center;list-style:none;margin:0 auto var(--s-3);width:max-content;padding-bottom:var(--s-2);font-size:14px;font-weight:700;color:var(--sub)}
   .has-h .steps b{font-family:Quicksand,sans-serif;margin-right:var(--s-1)}
   .has-h .steps li{transition:color .6s}.has-h .steps li.is-on{color:var(--accent)}
   .has-h .steps>i{position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--line);border-radius:2px;overflow:hidden}
@@ -292,24 +292,24 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .has-h .card__ph{grid-column:2;grid-row:1/4;height:100%;min-height:0;aspect-ratio:auto;margin:0}
   .has-h .card__top{grid-column:1;padding-top:var(--s-2)}
   .has-h .card>p,.has-h .card>.mats{grid-column:1}
-  .has-h .card>p{font-size:16px;line-height:2.1}
+  .has-h .card>p{font-size:16px;--lh:2}
   .has-h .card:first-child{grid-template-rows:auto auto 1fr}
 }
 
 /* タブレット・SP（〜1023px） */
 @media (max-width:1023px){
   html{scroll-padding-top:var(--s-8)}
-  body{font-size:14px;padding-bottom:80px}
+  body{font-size:16px;padding-bottom:80px}
   .only-pc{display:none}.only-sp{display:inline}
   .hd{height:72px;padding:0 var(--s-2) 0 var(--s-1)}
-  .logo__leaf{width:34px;height:32px}.logo__txt b{font-size:27px}.logo__txt small{font-size:9.5px}
+  .logo__leaf{width:34px;height:32px}.logo__txt b{font-size:28px}.logo__txt small{font-size:12px}
   .hd__r{gap:var(--s-1)}.hd__cta{height:48px;padding:0 var(--s-2);font-size:12px}.hd__menu{width:48px;height:48px}.hd__menu span{width:24px}
-  .hero{height:auto;padding:var(--s-9) 0 168px;display:flex;flex-direction:column}
+  .hero{height:auto;padding:var(--s-9) 0 160px;display:flex;flex-direction:column}
   .hero__copy{position:static;width:auto;padding:0 var(--s-3);max-width:720px}
   .hero__palette{display:none}
   .hero__catch{margin-top:var(--s-2)}
   .hero__catch span{max-width:520px;margin-bottom:var(--s-2)}
-  .hero__sub{font-size:14px;max-width:560px}
+  .hero__sub{font-size:16px;max-width:560px}
   .hero__cta{width:100%;max-width:400px;min-height:56px}
   .hero__ils{position:absolute;z-index:2;right:var(--s-2);bottom:var(--s-2);width:auto;margin:0}.hero__ils img:first-child{display:none}.hero__ils img:last-child{width:120px}
   .hero__strip{position:relative;left:auto;right:auto;top:auto;aspect-ratio:auto;display:grid;grid-template-columns:3fr 2fr;gap:var(--s-2);align-items:center;padding:0 var(--s-2);margin-top:var(--s-5)}
@@ -336,44 +336,44 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .head{padding:0 var(--s-4);margin-bottom:var(--s-4)}.head p{font-size:12px}
   .cards,.powers{grid-template-columns:minmax(0,1fr);gap:var(--s-3)}
   .card{padding:var(--s-3)}
-  .lead{font-size:14px;text-align:left;margin-bottom:var(--s-4)}
+  .lead{font-size:16px;text-align:left;margin-bottom:var(--s-4)}
   .powers article{display:flex;gap:var(--s-2);align-items:center;text-align:left;padding:var(--s-2);border-radius:24px}
   .powers .ic{margin:0;width:80px;height:80px}.powers .ic img{width:64px;height:64px}
-  .powers p{font-size:13px;margin-top:0;line-height:1.7}
+  .powers p{font-size:16px;margin-top:0;--lh:1.75}
   .teacher__band{height:304px}.teacher__band .en{font-size:12px;margin-bottom:var(--s-2)}
-  .teacher__band .btn{min-height:48px;font-size:13px;padding:0 var(--s-7)}
+  .teacher__band .btn{min-height:48px;font-size:16px;padding:0 var(--s-7)}
   .teacher__band .btn svg{right:var(--s-2)}
   .teacher__wave{height:24px}
   .teacher__body{padding:var(--s-4) var(--s-2) var(--s-5)}.teacher__card{padding:var(--s-3) var(--s-3)}
-  .badges li{font-size:11px}
+  .badges li{font-size:12px}
   .insta{grid-template-columns:minmax(0,1fr);padding:0;background:none;top:0;margin-bottom:var(--s-5);gap:var(--s-3)}
-  .insta__head p:not(.en){max-width:none;margin:var(--s-1) 0 var(--s-2);font-size:13px}
+  .insta__head p:not(.en){max-width:none;margin:var(--s-1) 0 var(--s-2);font-size:14px}
   .price{margin-bottom:var(--s-5)}.price__box{padding:var(--s-6) var(--s-2) var(--s-4);border-radius:24px}
   .price__list{grid-template-columns:minmax(0,1fr);gap:var(--s-2)}
   .price__list article{padding:var(--s-1) var(--s-3) var(--s-2)}
   .price__time{font-size:12px;border:0;margin:0;padding:0 0 var(--s-xs)}.price__yen b{font-size:32px}.price__yen small{font-size:12px}
   .price__info{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s-2);padding:var(--s-2) var(--s-3);margin-top:var(--s-2)}
-  .price__info div{display:block;font-size:14px;padding:0;text-align:left}.price__info div+div{border:0}.price__info dt{font-size:11px;color:var(--sub)}
+  .price__info div{display:block;font-size:16px;padding:0;text-align:left}.price__info div+div{border:0}.price__info dt{font-size:14px;color:var(--sub)}
   .price__note{text-align:left;font-size:12px}
-  .faq summary{gap:var(--s-2);padding:var(--s-2) var(--s-6) var(--s-2) var(--s-2);font-size:14px}.faq summary::before,.faq summary::after{right:var(--s-2)}
-  .faq i{width:28px;height:28px;font-size:14px}.faq details>p{gap:var(--s-2);margin:0 var(--s-2);font-size:13px}
+  .faq summary{gap:var(--s-2);padding:var(--s-2) var(--s-6) var(--s-2) var(--s-2);font-size:16px}.faq summary::before,.faq summary::after{right:var(--s-2)}
+  .faq i{width:28px;height:28px;font-size:14px}.faq details>p{gap:var(--s-2);margin:0 var(--s-2);font-size:16px}
   .access{grid-template-columns:minmax(0,1fr);gap:var(--s-3);padding:var(--s-2)}
   .access iframe{height:224px;border-radius:16px}.access h3{margin-top:0}
   .access dl div{grid-template-columns:72px minmax(0,1fr)}
   .contact{padding:var(--s-4) var(--s-2) var(--s-10)}
   .contact__form{padding:var(--s-1);border-radius:24px}
-  .contact__in{flex-direction:column;padding:var(--s-3) var(--s-2);text-align:center;gap:var(--s-2)}.contact__in p{font-size:13px}
+  .contact__in{flex-direction:column;padding:var(--s-3) var(--s-2);text-align:center;gap:var(--s-2)}.contact__in p{font-size:16px}
   .contact__in img{width:120px}
   .contact__in .btn,.contact__box .btn{width:100%;max-width:400px;min-height:56px}
   .contact__dm{padding:var(--s-6) var(--s-2) var(--s-3);border-radius:24px}
-  .contact__label{height:40px;padding:0 var(--s-3);font-size:13px;top:-24px}
-  .contact__box{flex-direction:column;padding:var(--s-3) var(--s-2);text-align:center;font-size:13px}
+  .contact__label{height:40px;padding:0 var(--s-3);font-size:14px;top:-24px}
+  .contact__box{flex-direction:column;padding:var(--s-3) var(--s-2);text-align:center;font-size:14px}
   .contact__arc{height:40px}
-  .mq{padding:var(--s-3) 0 var(--s-4)}.mq span{font-size:26px}.mq img{width:24px;height:24px}.mq__track{gap:var(--s-2)}
+  .mq{padding:var(--s-3) 0 var(--s-4)}.mq span{font-size:24px}.mq img{width:24px;height:24px}.mq__track{gap:var(--s-2)}
   .ft__brand{width:auto}.ft__main{flex-direction:column;gap:var(--s-2);width:calc(100% - 32px);margin-bottom:var(--s-3)}
   .ft__cols{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s-3) var(--s-2);width:calc(100% - 32px)}
   .tab{display:none}
-  .spbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;margin:0;align-items:center;justify-content:center;height:80px;padding:0 112px 0 48px;background:#fff;color:#fff;font-weight:700;font-size:16px;isolation:isolate;--arrow-fg:var(--accent)}
+  .spbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;margin:0;align-items:center;justify-content:center;height:80px;padding:0 120px 0 48px;background:#fff;color:#fff;font-weight:700;font-size:16px;isolation:isolate;--arrow-fg:var(--accent)}
   .spbar::before{content:"";position:absolute;inset:var(--s-2);background:var(--accent);border-radius:8px;z-index:-1}
   .spbar svg{position:absolute;right:var(--s-5);top:50%;margin-top:-12px;width:24px;height:24px;color:#fff}
 }
@@ -406,3 +406,11 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .insta__btn{position:relative;justify-content:center;padding:0 calc(var(--s-5) + var(--s-1))}
 .insta__btn svg{position:absolute;left:var(--s-2);top:50%;margin-top:-12px}
 @media (max-width:767px){.btn{padding:0 calc(var(--s-6) + var(--s-1))}}
+
+/* 行の高さは4の倍数に丸める（references/design-rules.md）。各要素は line-height の代わりに --lh を指定する */
+:root{--lh:1.75}
+*{line-height:var(--lh)}
+@supports (line-height:round(nearest,1em,4px)){*{line-height:round(nearest,calc(var(--lh) * 1em),4px)}}
+/* 文字を16pxにしたので、最後の1〜2文字だけが次の行に落ちないようにする */
+p,summary,h1,h2,h3,dd,li{text-wrap:pretty}
+.faq summary{text-wrap:balance}

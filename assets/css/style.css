@@ -414,3 +414,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 /* 文字を16pxにしたので、最後の1〜2文字だけが次の行に落ちないようにする */
 p,summary,h1,h2,h3,dd,li{text-wrap:pretty}
 .faq summary{text-wrap:balance}
+
+/* 先方のロゴ（小鳥）。2026-11-22 葉のアイコンから差し替え */
+.logo__mark{width:auto;height:56px;flex:none}
+.ft__brand .logo__mark{height:80px}
+@media (max-width:767px){.logo__mark{height:48px}.ft__brand .logo__mark{height:64px}}

@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=g7">
+<link rel="stylesheet" href="assets/css/style.css?v=g8">
 </head>
 <body>
 <script>
@@ -34,7 +34,7 @@ if(!s&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.document
 
 <header class="hd" id="top">
   <a class="logo" href="#top" aria-label="絵画・造形教室アイビー トップへ">
-    <svg class="logo__leaf"><use href="#leaf"/></svg>
+    <img class="logo__mark" src="assets/img/logo.webp" alt="" width="283" height="240">
     <span class="logo__txt"><b>Ivy</b><small>絵画・造形教室アイビー</small></span>
   </a>
   <div class="hd__r">
@@ -71,10 +71,10 @@ if(!s&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.document
   </div>
   <div class="hero__strip" aria-label="教室の写真">
     <div class="frame frame--a">
-      <img class="is-on" src="assets/img/classroom.webp" alt="窓辺の机で、大人と子どもが並んで絵を描いている教室の様子" width="1400" height="933">
-      <img src="assets/img/room-table.webp" alt="" width="1080" height="760">
-      <img src="assets/img/kids.webp" alt="" width="1100" height="733">
-      <img src="assets/img/adult.webp" alt="" width="1100" height="733">
+      <img class="is-on" src="assets/img/ph-lesson.webp" alt="教室の机で、子どもたちがトートバッグに絵を描いている様子" width="1400" height="1050">
+      <img src="assets/img/ph-room.webp" alt="" width="1400" height="1050">
+      <img src="assets/img/ph-tote.webp" alt="" width="1200" height="1313">
+      <img src="assets/img/ph-whale.webp" alt="" width="1200" height="1157">
     </div>
   </div>
   <div class="hero__scroll" aria-hidden="true"><span>SCROLL</span></div>
@@ -90,14 +90,14 @@ if(!s&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.document
     </div>
     <div class="classes__list">
       <article class="class">
-        <div class="pl"><img src="assets/img/kids.webp" alt="粘土と木の板で立体をつくっている子どもの手元" width="430" height="280" loading="lazy"></div>
+        <div class="pl"><img src="assets/img/ph-bubble.webp" alt="ストローで泡の絵の具を吹いて描いている子どもの手元" width="430" height="280" loading="lazy"></div>
         <p class="tag tag--main">小学生〜高校生</p>
         <h3>子どもクラス</h3>
         <p>家ではできない大きな絵や、木・ボード・粘土の<span class="nw">立体にも挑戦。</span></p>
         <a class="go" href="kids/">子どもクラスへ<svg><use href="#arrow"/></svg></a>
       </article>
       <article class="class">
-        <div class="pl"><img src="assets/img/adult.webp" alt="窓辺の机で、水彩の風景を描いている大人の後ろ姿" width="430" height="280" loading="lazy"></div>
+        <div class="pl"><img src="assets/img/ph-scratch.webp" alt="黒く塗ったクレヨンを竹串でけずって描いている手元" width="430" height="280" loading="lazy"></div>
         <p class="tag tag--accent">大人</p>
         <h3>大人クラス</h3>
         <p>昔好きだった絵を、もう一度。油絵や透明水彩を基礎から。</p>
@@ -108,9 +108,9 @@ if(!s&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.document
 
   <section class="hello">
     <div class="hello__photos">
-      <img src="assets/img/clay.webp" alt="粘土と木の素材" width="360" height="250" loading="lazy">
-      <img src="assets/img/adult2.webp" alt="水彩の風景画に筆を入れる大人の手元" width="320" height="220" loading="lazy">
-      <img src="assets/img/tools.webp" alt="教室で使う画材" width="260" height="180" loading="lazy">
+      <img src="assets/img/ph-resin.webp" alt="色を流してつくったプレートや粘土の作品" width="360" height="250" loading="lazy">
+      <img src="assets/img/ph-gacha.webp" alt="紙コップとカップでつくったお菓子のガチャガチャ" width="320" height="220" loading="lazy">
+      <img src="assets/img/ph-bottles.webp" alt="色の層を重ねてつくった小びんの作品" width="260" height="180" loading="lazy">
       <img class="hello__deco" src="assets/img/ic-palette.webp" alt="" width="110" height="76" loading="lazy">
     </div>
     <div class="hello__txt">
@@ -137,12 +137,12 @@ if(!s&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.document
         <div class="card__top"><div><p class="en">MATERIALS</p><h3>たくさんの素材から<br>自由に選べる</h3></div><span class="ic"><img src="assets/img/ic-blocks.webp" alt="" width="64" height="64" loading="lazy"></span></div>
         <p>絵の具で描きたい日も、木や粘土でつくりたい日も。作りたいものに合わせて、使う素材を自分で選べます。</p>
         <div class="mats"><p class="mats__label">使える材料</p><ul><li>油絵</li><li>アクリル</li><li>水彩</li><li>鉛筆</li><li>色鉛筆</li><li>パステル</li><li>粘土</li><li>紙</li><li>木工</li></ul></div>
-        <img class="card__ph" src="assets/img/materials.webp" alt="油絵、デッサン、粘土、木工の作例" width="364" height="290" loading="lazy">
+        <img class="card__ph" src="assets/img/ph-straps.webp" alt="色をぬって仕上げたサーフボードやイルカのストラップ" width="364" height="290" loading="lazy">
       </article>
       <article class="card">
         <div class="card__top"><div><p class="en">SMALL CLASS</p><h3>少人数で一人ずつ</h3></div><span class="ic"><img src="assets/img/ic-palette.webp" alt="" width="64" height="64" loading="lazy"></span></div>
         <p>進め方は一人ひとり違っていい。自由課題にも対応し、興味と習熟度に合わせて教えます。</p>
-        <img class="card__ph" src="assets/img/table.webp" alt="制作の途中の机の上" width="364" height="290" loading="lazy">
+        <img class="card__ph" src="assets/img/ph-table.webp" alt="制作の準備をした教室の机" width="364" height="290" loading="lazy">
       </article>
       <article class="card">
         <div class="card__top"><div><p class="en">ARTIST</p><h3>現役の壁画作家が教える</h3></div><span class="ic"><img src="assets/img/ic-brushes.webp" alt="" width="64" height="64" loading="lazy"></span></div>
@@ -277,7 +277,7 @@ if(!s&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.document
   </div></div>
   <div class="ft__main">
     <div class="ft__brand">
-      <a class="logo" href="#top"><svg class="logo__leaf"><use href="#leaf"/></svg><span class="logo__txt"><b>Ivy</b><small>絵画・造形教室アイビー</small></span></a>
+      <a class="logo" href="#top"><img class="logo__mark" src="assets/img/logo.webp" alt="" width="283" height="240"><span class="logo__txt"><b>Ivy</b><small>絵画・造形教室アイビー</small></span></a>
       <a class="ft__insta" href="https://www.instagram.com/painting.art.class/" target="_blank" rel="noopener"><svg><use href="#insta"/></svg>Instagram</a>
     </div>
     <div class="ft__addr">

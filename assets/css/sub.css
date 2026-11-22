@@ -99,3 +99,34 @@ body:has(.sub-hero) .hd .logo{background:#fff}
 /* 同じ背景が3つ続かないよう、材料のセクションは白にする */
 .white-band{background:#fff;padding:var(--s-4) 0}
 .white-band .sec--tight{padding-top:var(--s-7);padding-bottom:var(--s-7)}
+
+/* こんな子・こんな方が通っています（2026-11-22） */
+.fit{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-4);list-style:none;max-width:1080px;margin:var(--s-4) auto 0}
+.fit li{background:#fff;border-radius:24px;overflow:hidden;text-align:center}
+.fit img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.fit b{display:block;padding:var(--s-3);font-size:var(--h-4);--lh:1.5}
+.white-band .fit li{background:var(--main-pale)}
+.fit--txt li{padding:var(--s-4);text-align:left}
+.fit--txt b{padding:0 0 var(--s-2);border-bottom:2px dashed var(--main);margin-bottom:var(--s-2)}
+.fit--txt p{font-size:16px}
+/* 子どもに育てたい力（アイコンなし） */
+.powers--plain{margin-top:var(--s-4)}
+.powers--plain article{text-align:left;border-top:4px solid var(--main)}
+/* 作品 */
+.works{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s-3);list-style:none;margin-top:var(--s-4)}
+.works li{display:flex;flex-direction:column;gap:var(--s-1)}
+.works img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:16px;border:4px solid var(--main)}
+.works span{font-size:14px;font-weight:700;text-align:center}
+/* 油絵と透明水彩 */
+.two-ph{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s-4);max-width:1080px;margin:var(--s-4) auto 0}
+.two-ph img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:24px;border:8px solid var(--main)}
+.two-ph figcaption{margin-top:var(--s-2);text-align:center}
+.two-ph figcaption b{font-size:var(--h-3)}
+@media (max-width:1023px){
+  .fit,.two-ph{grid-template-columns:minmax(0,1fr);gap:var(--s-3)}
+  .works{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s-2)}
+  .two-ph img{border-width:4px}
+}
+/* 写真の顔が切れないように */
+.sub-hero__bg{object-position:50% 30%}
+.green-band{background:var(--main-pale2);padding:var(--s-4) 0}

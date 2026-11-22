@@ -419,3 +419,6 @@ p,summary,h1,h2,h3,dd,li{text-wrap:pretty}
 .logo__mark{width:auto;height:56px;flex:none}
 .ft__brand .logo__mark{height:80px}
 @media (max-width:767px){.logo__mark{height:48px}.ft__brand .logo__mark{height:64px}}
+/* 吹き出しの下：イラストを写真に置き換え（2026-11-22） */
+.hello__figs img{aspect-ratio:1;object-fit:cover;border-radius:50%;border:8px solid #fff}
+@media (max-width:1023px){.hello__figs img{border-width:4px}}

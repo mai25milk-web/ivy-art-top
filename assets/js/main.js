@@ -36,18 +36,32 @@
     try { sessionStorage.setItem('ivy-splash', '1'); } catch (e) { /* 保存できなくても動く */ }
   }
   if (root.classList.contains('splash') && curtain) {
-    var mark = curtain.querySelector('.curtain__logo'), goal = document.querySelector('.hd .logo__leaf');
+    var mark = curtain.querySelector('.curtain__logo'), bird = curtain.querySelector('.curtain__bird'), goal = document.querySelector('.hd .logo__mark');
     requestAnimationFrame(function () { curtain.classList.add('is-in'); });
+    /* 鳥：画面の外から、羽ばたきながら大きく1周半まわって真ん中に降りる */
+    var FLY = 1900, t0 = null, R = Math.max(innerWidth, innerHeight) * .55;
+    bird.style.transform = 'translate(' + (-R) + 'px,0) scale(.5)';
+    (function fly(now) {
+      if (t0 === null) t0 = now;
+      var t = Math.min((now - t0) / FLY, 1), e = Math.sin(t * Math.PI / 2);
+      var r = R * Math.pow(1 - t, 1.4), th = Math.PI + Math.PI * 3 * e;
+      var x = r * Math.cos(th), y = r * Math.sin(th) * .5;
+      var tilt = -18 * Math.sin(th) * (1 - e), flap = 1 + .1 * Math.sin(t * Math.PI * 16) * (1 - e);
+      bird.style.transform = 'translate(' + x + 'px,' + y + 'px) rotate(' + tilt + 'deg) scale(' + (.5 + .5 * e) + ',' + ((.5 + .5 * e) * flap) + ')';
+      if (t < 1) requestAnimationFrame(fly); else bird.style.transform = '';
+    })(performance.now());
+    setTimeout(function () { curtain.classList.add('is-text'); }, FLY - 200);
     setTimeout(function () {
-      var a = mark.querySelector('svg').getBoundingClientRect(), b = goal.getBoundingClientRect();
-      var s = b.width / a.width;
+      if (!goal) return;
+      var a = bird.getBoundingClientRect(), b = goal.getBoundingClientRect();
+      var s = b.height / a.height;
       var dx = b.left + b.width / 2 - (a.left + a.width / 2), dy = b.top + b.height / 2 - (a.top + a.height / 2);
       mark.style.transformOrigin = '50% ' + (a.top + a.height / 2 - mark.getBoundingClientRect().top) + 'px';
       mark.style.transform = 'translate(' + dx + 'px,' + dy + 'px) scale(' + s + ')';
-    }, 1300);
-    setTimeout(function () { curtain.classList.add('is-out'); endSplash(); }, 2300);
-    setTimeout(function () { mark.style.transition = 'opacity .5s ease'; mark.style.opacity = 0; }, 2300);
-    setTimeout(function () { curtain.classList.remove('is-out', 'is-in'); }, 3900);
+    }, FLY + 700);
+    setTimeout(function () { curtain.classList.add('is-out'); endSplash(); }, FLY + 1500);
+    setTimeout(function () { mark.style.transition = 'opacity .5s ease'; mark.style.opacity = 0; }, FLY + 1500);
+    setTimeout(function () { curtain.classList.remove('is-out', 'is-in', 'is-text'); }, FLY + 3100);
   }
 
   /* ヒーローの写真：枠ごとに順番にクロスフェード */
